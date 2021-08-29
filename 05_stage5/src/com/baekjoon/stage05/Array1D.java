@@ -177,4 +177,38 @@ public class Array1D {
 		
 	}
 	
+	public void no4344() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("테스트 케이스 개수 : ");
+		int num = sc.nextInt();
+		int[] studentNum = new int[num];
+		double[] avg = new double[num];
+		
+		
+		for(int i = 0; i < studentNum.length; i++) {
+			System.out.print("학생 수 : ");
+			studentNum[i] = sc.nextInt();
+			int[] studentScore = new int[studentNum[i]];
+			
+			System.out.print("점수 입력 : ");
+			for(int j = 0; j < studentScore.length; j++) {
+				studentScore[j] = sc.nextInt();
+				avg[i] += studentScore[j];
+			}
+			avg[i] = avg[i] / studentNum[i];
+			int count = 0;
+			
+			for(int k = 0; k < studentScore.length; k++) {
+				if(avg[i] < studentScore[k]) {
+					count++;
+				}
+			}
+			avg[i] = 100.0 / studentNum[i] * count;
+		}
+		
+		for(int i = 0; i < avg.length; i++) {
+			System.out.printf("평균을 넘는 학생 비율 : %.3f%%%n", avg[i]);
+		}
+	}
+	
 }
