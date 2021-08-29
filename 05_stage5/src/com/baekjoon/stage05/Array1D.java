@@ -178,6 +178,7 @@ public class Array1D {
 	}
 	
 	public void no4344() {
+		// 평균은 넘겠지
 		Scanner sc = new Scanner(System.in);
 		System.out.print("테스트 케이스 개수 : ");
 		int num = sc.nextInt();
