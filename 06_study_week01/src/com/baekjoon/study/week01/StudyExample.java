@@ -120,6 +120,22 @@ public class StudyExample {
 		// 설탕 배달
 		Scanner sc = new Scanner(System.in);
 		System.out.print("배달해야 할 설탕의 무게 : ");
+		int num = sc.nextInt();
+		int result = 0;
+		
+		if((num % 5) == 1 || (num % 5) == 3) {
+			result = num / 5 + 1;
+		} else if(num % 5 == 2 || num % 5 == 4) {
+			if(num == 7 || num == 4) {
+				result = -1;
+			} else {
+				result = num / 5 + 2;
+			}
+		} else {
+			result = num / 5;
+		}
+		
+		System.out.println("봉지의 최소 개수 : " + result);
 
 	}
 	
@@ -192,26 +208,48 @@ public class StudyExample {
 			arr[i] = sc.nextInt();
 		}
 		
-		int[] copyArr = new int[num];
-		int key = 0;
 		for(int i = 0; i < arr.length; i++) {
-			key = arr[i];
 			for(int j = i+1; j < arr.length; j++) {
-				if(key > arr[j]) {
-					copyArr[i] = arr[j];
-					copyArr[j] = arr[i];
-				} else {
-					copyArr[i] = arr[i];
-					copyArr[j] = arr[j];
-					break;
+				if(arr[i] > arr[j]) {
+					int temp = arr[j];
+					arr[j] = arr[i];
+					arr[i] = temp;
 				}
-				
 			}
+			System.out.println(arr[i]);
 		}
-		
-		for(int i = 0; i < arr.length; i++) {
-			System.out.println(copyArr[i]);
+	}
+
+	public void no10989() {
+		// 수 정렬하기 3
+		// 카운팅 정렬
+		int[] count = new int[10001];
+
+		try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+			System.out.print("수의 개수 입력 : ");
+			int num = Integer.parseInt(br.readLine());
+			
+			System.out.println("숫자 입력");
+			
+			for(int i = 0; i < num; i++) {
+				count[Integer.parseInt(br.readLine())]++;
+			}
+			
+			StringBuilder sb = new StringBuilder();
+			
+			for(int i = 1; i < count.length; i++) {
+				while(count[i] > 0) {
+					sb.append(i).append('\n');
+					count[i]--;
+				}
+			}
+			
+			System.out.println(sb);
+			
+		} catch (NumberFormatException e) {
+		} catch (IOException e) {
 		}
+			
 	}
 	
 }
