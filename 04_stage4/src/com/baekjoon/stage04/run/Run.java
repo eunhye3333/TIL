@@ -6,7 +6,7 @@ public class Run {
 	public static void main(String[] args) {
 		WhileStatement ws = new WhileStatement();
 //		ws.no10952();
-		
-		ws.no1110();
+		ws.no10951();
+//		ws.no1110();
 	}
 }

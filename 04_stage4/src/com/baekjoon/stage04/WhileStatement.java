@@ -1,7 +1,12 @@
 package com.baekjoon.stage04;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class WhileStatement {
 	public void no10952() {
@@ -34,7 +39,32 @@ public class WhileStatement {
 	
 	public void no10951() {
 		// A+B - 4
-		// EOF 판단 - hasNextLine()
+		// EOF 판단 
+		// ctrl + z를 입력하면 EOF 발생
+		
+		System.out.println("정수 입력");
+		
+		try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));) {
+			ArrayList<Integer> list = new ArrayList<Integer>();
+			String str = "";
+			
+			while((str = br.readLine()) != null) {
+				StringTokenizer st = new StringTokenizer(str);
+				int sum = 0;
+				while(st.hasMoreTokens()) {
+					sum += Integer.parseInt(st.nextToken());
+				}
+				list.add(sum);
+			}
+			
+			System.out.println("덧셈 결과");
+			for(int i = 0; i < list.size(); i++) {
+				System.out.println(list.get(i));
+			}
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 	}
 	
