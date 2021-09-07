@@ -1,6 +1,12 @@
 package com.baekjoon.stage03;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class ForStatement {
 	public void no2739() {
@@ -58,6 +64,26 @@ public class ForStatement {
 	public void no15552() {
 		// 빠른 A+B
 		// 버퍼 사용
+		try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));) {
+			
+			System.out.print("테스트 케이스 개수를 입력하세요 : ");
+			int tc = Integer.parseInt(br.readLine());
+			StringTokenizer st;
+			
+			for(int i = 0; i < tc; i++) {
+				st = new StringTokenizer(br.readLine());
+				bw.write(Integer.parseInt(st.nextToken()) + Integer.parseInt(st.nextToken()) + "\n");
+			}
+			bw.flush();
+			
+			
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	public void no2741() {
