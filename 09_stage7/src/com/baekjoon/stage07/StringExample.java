@@ -134,6 +134,108 @@ public class StringExample {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
+	
+	public void no5622() {
+		// 다이얼 
+		System.out.print("문자열 입력 : ");
+		
+		try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));) {
+			String str = br.readLine();
+			int time = 0;
+			for(int i = 0; i < str.length(); i++) {
+				char ch = str.charAt(i);
+				if(ch == 'Z') {
+					ch = 'X';
+				} else if(ch >= 'S') {
+					ch--;
+				}
+				time += (ch - 'A') / 3 + 1 + 2;
+			}
+			System.out.println("최소 시간 : " + time);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void no2941() {
+		// 크로아티아 알파벳
+		System.out.print("문자열 입력 : ");
+		
+		try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));) {
+			String str = br.readLine();
+			
+			int len = str.length();
+			int count = 0;
+			for(int i = 0; i < len; i++) {
+				char ch = str.charAt(i);
+				if(ch == 'c' && i < len - 1) {
+					if(str.charAt(i + 1) == '=' || str.charAt(i + 1) == '-') {
+						i++;
+					}
+				}
+				
+				if(ch == 'd' && i < len - 1) {
+					if(str.charAt(i + 1) == '-') {
+						i++;
+					} else if(str.charAt(i + 1) == 'z' && i < len - 2) {
+						if(str.charAt(i + 2) == '=') {
+							i += 2;
+						}
+					}
+				}
+				
+				if(ch == 'l' && i < len - 1) {
+					if(str.charAt(i + 1) == 'j') {
+						i++;
+					}
+				}
+				
+				if(ch == 'n' && i < len - 1) {
+					if(str.charAt(i + 1) == 'j') {
+						i++;
+					}
+				}
+				
+				if(ch == 's' && i < len - 1) {
+					if(str.charAt(i + 1) == '=') {
+						i++;
+					}
+				}
+				
+				if(ch == 'z' && i < len - 1) {
+					if(str.charAt(i + 1) == '=') {
+						i++;
+					}
+				}
+				count++;
+			}
+			
+			System.out.println("알파벳 개수 : " + count);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void no1316() {
+		// 그룹 단어 체커
+		// 함수 생성 후 풀이
+		try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));) {
+			System.out.print("개수 입력 : ");
+			int num = Integer.parseInt(br.readLine());
+			int count = num;
+
+			System.out.println("문자 입력");
+			
+			for(int i = 0; i < num; i++) {
+	
+				
+			}
+			System.out.println("그룹 단어 개수 : " + count);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 }
