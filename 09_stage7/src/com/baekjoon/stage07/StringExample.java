@@ -224,18 +224,83 @@ public class StringExample {
 		try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));) {
 			System.out.print("개수 입력 : ");
 			int num = Integer.parseInt(br.readLine());
-			int count = num;
-
-			System.out.println("문자 입력");
-			
+			int count = 0;
+			System.out.println("단어 입력");
 			for(int i = 0; i < num; i++) {
-	
-				
+				if(check()) {
+					count++;
+				}
 			}
+			
 			System.out.println("그룹 단어 개수 : " + count);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 	}
+	
+	public boolean check() throws IOException {
+		// no1316
+		boolean[] ck = new boolean[26];
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String str = br.readLine();
+		char prev = ' ';
+		
+		for(int i = 0; i < str.length(); i++) {
+			char now = str.charAt(i);
+			if(prev != now) {
+				if(ck[now - 'a']) {
+					return false;
+				} else {
+					ck[now - 'a'] = true;
+					prev = now;
+				}
+			}
+		}
+		return true;
+	}
+	
+//	import java.io.BufferedReader;
+//	import java.io.IOException;
+//	import java.io.InputStreamReader;
+//
+//	public class Main {
+//		
+//		static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		
+//		public static void main(String[] args) throws IOException {
+//			
+//			int num = Integer.parseInt(br.readLine());
+//			int count = 0;
+//			for(int i = 0; i < num; i++) {
+//				if(check()) {
+//					count++;
+//				}
+//			}
+//			
+//			System.out.println(count);
+//		
+//		}
+//		
+//		public static boolean check() throws IOException {
+//			boolean[] ck = new boolean[26];
+//			String str = br.readLine();
+//			int prev = 0;
+//			
+//			for(int i = 0; i < str.length(); i++) {
+//				int now = str.charAt(i);
+//				if(prev != now) {
+//					if(ck[now - 'a']) {
+//						return false;
+//					} else {
+//						ck[now - 'a'] = true;
+//						prev = now;
+//					}
+//				}
+//			}
+//			return true;
+//		}
+//	}
 	
 }
