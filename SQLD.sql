@@ -1,4 +1,4 @@
--- 데이터 입력 결과 확인
+-- 데이터 입력 결과 확인 쿼리
 SELECT ROWNUM AS 순번, TABLE_NAME AS 테이블명, 
        (SELECT L.COMMENTS
         FROM DBA_TAB_COMMENTS L
