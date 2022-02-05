@@ -17,10 +17,10 @@
 1. src/test/java 디렉토리에 테스트할 클래스의 패키지와 동일한 패키지 생성
 2. 테스트 클래스 생성 (클래스 이름에 Test를 붙여 생성)
 3. 테스트 코드 작성  
-    @RunWith(SpringRunner.class) : 테스트를 진행할 때 JUnit에 내장된 실행자 외에 () 내부의 실행자를 실행시키는 역할 (스프링 부트 테스트와 JUnit 사이의 연결자 역할)
-    @WebMvcTest : 스프링 테스트 어노테이션 중 Web에 집중할 수 있는 어노테이션, 선언할 경우 @Controller, @ControllerAdvice 등을 사용 가능 (단, @Service, @Component, @Repository 등은 사용 불가능)
-    private MockMvc mvc : 웹 API를 테스트할 때 사용하는 변수로 스프링 MVC 테스으틔 시작점, MockMvc 클래스를 통해 HTTP GET, POST 등에 대한 API 테스트 가능
-    mvc.perform(get("/hello")) : MockMvc를 통해 /hello라는 주소로 HTTP GET 요청을 하는 것으로 체이닝이 지원됨
-    .andExpect(status().isOK()) : mvc.perform의 결과를 검증, HTTP Header의 Status(200, 404, 500 등의 상태)를 검증하는 것인데, 여기서는 OK이므로 200인지 아닌지 검증
-    .andExpect(content().string(hello)) : 응답 본문의 내용을 검증하는 것으로 hello가 맞게 리턴되고 있는지 검증
+    __@RunWith(SpringRunner.class)__ : 테스트를 진행할 때 JUnit에 내장된 실행자 외에 () 내부의 실행자를 실행시키는 역할 (스프링 부트 테스트와 JUnit 사이의 연결자 역할)  
+    __@WebMvcTest__ : 스프링 테스트 어노테이션 중 Web에 집중할 수 있는 어노테이션, 선언할 경우 @Controller, @ControllerAdvice 등을 사용 가능 (단, @Service, @Component, @Repository 등은 사용 불가능)  
+    __private MockMvc mvc__ : 웹 API를 테스트할 때 사용하는 변수로 스프링 MVC 테스으틔 시작점, MockMvc 클래스를 통해 HTTP GET, POST 등에 대한 API 테스트 가능  
+    __mvc.perform(get("/hello"))__ : MockMvc를 통해 /hello라는 주소로 HTTP GET 요청을 하는 것으로 체이닝이 지원됨  
+    __.andExpect(status().isOK())__ : mvc.perform의 결과를 검증, HTTP Header의 Status(200, 404, 500 등의 상태)를 검증하는 것인데, 여기서는 OK이므로 200인지 아닌지 검증  
+    __.andExpect(content().string(hello))__ : 응답 본문의 내용을 검증하는 것으로 hello가 맞게 리턴되고 있는지 검증
 
