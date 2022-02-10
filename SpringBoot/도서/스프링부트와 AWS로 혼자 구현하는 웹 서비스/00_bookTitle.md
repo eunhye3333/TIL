@@ -1,2 +1,0 @@
-# 스프링부트와 AWS로 혼자 구현하는 웹 서비스
-![book](http://image.kyobobook.co.kr/images/book/xlarge/602/x9788965402602.jpg)
