@@ -17,6 +17,7 @@
 <br>
 
 ## 스프링부트 개념정리 4강 - JPA란 무엇인가요?
+[:link: 04_JPA](https://github.com/eunhye3333/TIL/blob/main/SpringBoot/%EA%B0%95%EC%9D%98/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC/04_JPA.md)  
 <br>
 
 ## 스프링부트 개념정리 5강 - ORM이란 무엇인가요?
