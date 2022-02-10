@@ -26,3 +26,4 @@ BufferWriter : Byte Stream으로 데이터를 전송할 때 가변 길이의 문
 ### Spring에서는
 BufferedReader와 BufferWriter를 직접 구현할 필요 없이 @ResponseBody(BufferWriter), @RequestBody(BufferedReader)라는 어노테이션을 통해 제공해 줌  
 따라서 전송하는 데이터를 받을 수 있음
+ 
