@@ -38,7 +38,7 @@ exe 파일 실행하여 설치
 ## VS Code 다운로드
 [VS Code 다운로드 사이트](https://code.visualstudio.com/)  
 exe 파일 실행하여 설치
-<br>
+<br><br>
 
 ## VS Code 사용법
 1. 프로젝트 폴더 지정하기 (폴더 생성 후 VS Code에서 열기)
