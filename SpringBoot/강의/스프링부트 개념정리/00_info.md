@@ -21,30 +21,40 @@
 <br>
 
 ## 스프링부트 개념정리 5강 - ORM이란 무엇인가요?
+[:link: 05_ORM](https://github.com/eunhye3333/TIL/blob/main/SpringBoot/%EA%B0%95%EC%9D%98/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC/05_ORM.md)  
 <br>
 
 ## 스프링부트 개념정리 6강 - 영속성 컨텍스트란 무엇인가요?
+[:link: 06_persistenceContext](https://github.com/eunhye3333/TIL/blob/main/SpringBoot/%EA%B0%95%EC%9D%98/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC/06_persistenceContext.md)  
 <br>
 
 ## 스프링부트 개념정리 7강 - OOP 관점에서 모델링이란 무엇일까요?
-<br>
+[:link: 07_modeling](https://github.com/eunhye3333/TIL/blob/main/SpringBoot/%EA%B0%95%EC%9D%98/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC/07_modeling.md)  
+<br> 
 
 ## 스프링부트 개념정리 8강 - HTTP가 무엇일까요? 정확히 알아야 해요
-<br>
+[:link: 08_HTTP](https://github.com/eunhye3333/TIL/blob/main/SpringBoot/%EA%B0%95%EC%9D%98/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC/08_HTTP.md)  
+<br> 
 
 ## 스프링부트 개념정리 9강 - 톰켓이란 무엇인가요?
+[:link: 09_tomcat](https://github.com/eunhye3333/TIL/blob/main/SpringBoot/%EA%B0%95%EC%9D%98/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC/09_tomcat.md)  
 <br>
 
 ## 스프링부트 개념정리 10강 - 서블릿 객체의 생명주기가 궁금해요!
+[:link: 10_servlet](https://github.com/eunhye3333/TIL/blob/main/SpringBoot/%EA%B0%95%EC%9D%98/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC/10_servlet.md)  
 <br>
 
 ## 스프링부트 개념정리 11강 - 웹 배포서술자(web.xml)에 대해서 알려줘요!
+[:link: 11_web_xml](https://github.com/eunhye3333/TIL/blob/main/SpringBoot/%EA%B0%95%EC%9D%98/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC/11_web_xml.md)  
 <br>
 
 ## 스프링부트 개념정리 12강 - 디스패처 서블릿이 무엇인가요?
+[:link: 12_FrontControllerPattern](https://github.com/eunhye3333/TIL/blob/main/SpringBoot/%EA%B0%95%EC%9D%98/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC/12_FrontControllerPattern.md)  
 <br>
 
 ## 스프링부트 개념정리 13강 - 애플리케이션 컨텍스트란 무엇인가요?
+[:link: 13_ApplicationContext](https://github.com/eunhye3333/TIL/blob/main/SpringBoot/%EA%B0%95%EC%9D%98/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC/13_ApplicationContext.md)  
 <br>
 
 ## 스프링부트 개념정리 14강 - 스프링부트가 응답(Response)하는 방법이 궁금해요!
+[:link: 14_response](https://github.com/eunhye3333/TIL/blob/main/SpringBoot/%EA%B0%95%EC%9D%98/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC/14_response.md)  
