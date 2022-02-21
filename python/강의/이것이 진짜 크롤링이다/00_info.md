@@ -13,10 +13,21 @@
 [:link: 02_HTML](https://github.com/eunhye3333/TIL/blob/main/python/%EA%B0%95%EC%9D%98/%EC%9D%B4%EA%B2%83%EC%9D%B4%20%EC%A7%84%EC%A7%9C%20%ED%81%AC%EB%A1%A4%EB%A7%81%EC%9D%B4%EB%8B%A4/02_HTML.md)  
 [:link: 03_requests](https://github.com/eunhye3333/TIL/blob/main/python/%EA%B0%95%EC%9D%98/%EC%9D%B4%EA%B2%83%EC%9D%B4%20%EC%A7%84%EC%A7%9C%20%ED%81%AC%EB%A1%A4%EB%A7%81%EC%9D%B4%EB%8B%A4/03_requests.md)  
 [:link: 04_beautifulsoup](https://github.com/eunhye3333/TIL/blob/main/python/%EA%B0%95%EC%9D%98/%EC%9D%B4%EA%B2%83%EC%9D%B4%20%EC%A7%84%EC%A7%9C%20%ED%81%AC%EB%A1%A4%EB%A7%81%EC%9D%B4%EB%8B%A4/04_beautifulsoup.md)  
+[:link: 05_cssSelector](https://github.com/eunhye3333/TIL/blob/main/python/%EA%B0%95%EC%9D%98/%EC%9D%B4%EA%B2%83%EC%9D%B4%20%EC%A7%84%EC%A7%9C%20%ED%81%AC%EB%A1%A4%EB%A7%81%EC%9D%B4%EB%8B%A4/05_cssSelector.md)  
 <br>  
 
 ## 섹션 3. 실전 프로젝트 1) 뉴스 데이터 수집하기
+[:link: 06_newsData](https://github.com/eunhye3333/TIL/blob/main/python/%EA%B0%95%EC%9D%98/%EC%9D%B4%EA%B2%83%EC%9D%B4%20%EC%A7%84%EC%A7%9C%20%ED%81%AC%EB%A1%A4%EB%A7%81%EC%9D%B4%EB%8B%A4/06_newsData.md)  
+<br> 
 
 ## 섹션 4. 실전 프로젝트 2) 주가 정보 데이터 수집하기
+[:link: 07_stock](https://github.com/eunhye3333/TIL/blob/main/python/%EA%B0%95%EC%9D%98/%EC%9D%B4%EA%B2%83%EC%9D%B4%20%EC%A7%84%EC%A7%9C%20%ED%81%AC%EB%A1%A4%EB%A7%81%EC%9D%B4%EB%8B%A4/07_stock.md)  
+<br> 
 
 ## 섹션 5. 실전 프로젝트 3) 상품 정보 데이터 수집하기
+[:link: 08_selenium](https://github.com/eunhye3333/TIL/blob/main/python/%EA%B0%95%EC%9D%98/%EC%9D%B4%EA%B2%83%EC%9D%B4%20%EC%A7%84%EC%A7%9C%20%ED%81%AC%EB%A1%A4%EB%A7%81%EC%9D%B4%EB%8B%A4/08_selenium.md)   
+<br>
+
+## 실습
+[:link: 실습](https://github.com/eunhye3333/startcoding)
+<br> 
