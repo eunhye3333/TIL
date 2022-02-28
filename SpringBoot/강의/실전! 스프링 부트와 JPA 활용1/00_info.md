@@ -1,7 +1,7 @@
 # 스프링부트 개념정리(이론) - 인프런
 [:link: Link](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-%ED%99%9C%EC%9A%A9-1#)  
 <br>
-![image](https://user-images.githubusercontent.com/77559262/155824793-84d7012c-ee9a-4eef-875a-b390ccafa343.png)
+![image](https://user-images.githubusercontent.com/77559262/155824793-84d7012c-ee9a-4eef-875a-b390ccafa343.png)  
 <br>
 
 # 목차
