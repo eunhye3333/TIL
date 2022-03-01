@@ -75,7 +75,155 @@ static 위젯 앞에 const 키워드를 사용하지 않는 경우 노란색 밑
 <br>
 
 ## Flutter 프로젝트 폴더의 구성
-+ pubspec.yaml 파일 : 프로젝트의 메타 데이터를 정의하고 관리 (프로젝트 버전, 사용 환경 등)
++ pubspec.yaml 파일 : 프로젝트의 메타 데이터를 정의하고 관리 (프로젝트 버전, 사용 환경 등), 들여쓰기에 민감함
 + android/ios 폴더 : 각 플랫폼에 맞게 앱을 배포하기 위한 정보를 가지고 있음
 + test 폴더 : dart 관련 코드를 테스트 가능
-+ lib 폴더 : 앱 작업의 중심이 되는 폴더
++ lib 폴더 : 앱 작업의 중심이 되는 폴더  
+<br>
+
+## Class and Widget
++ Class : 객체의 속성과 기능에 대한 정의가 들어가 있음 (설계도)  
+  객체가 가져야 하는 속성과 기능을 정의한 내용을 담고 잇는 설계도 역할  
++ 인스턴스 : 설계도에 의해 만들어진 것, 같은 설계도에 의해 만들어졌기 때문에 동일하나, 시리얼 넘버 등으로 구별됨  
+  클래스를 기반으로 클래스의 속성과 기능을 똑같이 가진 상태로 생성된 프로그래밍 상에서 사용되는 대상
++ 객체 : 메모리로 할당되어진 순간의 클래스  
+  클래스가 정의된 후 메모리 상에서 할당되었을 때 이를 객체라고 함  
+<br>
+
+### DardPad를 이용한 Dart 코드 학습
+class 생성
+``` dart
+class Person{
+  String? name; // 초기화를 필수로 진행해야 하며, 하지 않는 경우 ? 붙여 줘야 함
+  int? age;
+  String? gender;
+}
+```
+※ 변수 값을 할당하는 경우 dart가 알아서 변수 타입을 추론하는 기능을 가지고 있기 때문에 var 타입 사용 가능 (ex. var name = 'John')  
+<br>
+
+인스턴스 생성
+``` dart
+void main(){
+  
+  Person p1 = new Person();
+  p1.age = 30; // 값 대입
+  
+  print(p1.age); // 출력
+}
+```
+<br>
+
+### 생성자
+클래스를 만들 때 생성자를 따로 생성하지 않으면 기본 생성자가 만들어짐  
+생성자는 함수와 동일한 형태로 생성  
+생성자는 인스턴스를 생성함과 동시에 클래스에서 정의한 변수 값을 할당받도록 강제해서 원하는 값을 가진 인스턴스를 착오 없이 만들게 함  
+
+함수 생성  
+``` dart
+addNumber(int num1, int num2){ // 타입 추론 가능
+  return num1 + num2;
+}
+
+int addNumber(int num1, int num2){
+  return num1 + num2;
+}
+```
+타입 추론은 가능하나, 작성해 주는 것이 오류 식별에 좋음  
+
+생성자 생성
+``` dart
+class Person{
+  String? name;
+  int? age;
+  String? gender;
+  
+  Person(String name, int age, String gender){
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
+}
+```
+위 생성자는 argument가 몇 개이든 그 순서에 맞게 모든 값을 입력해야 하고, 필요한 argument만 따로 골라 입력받을 수 없음  
+→ 이를 해결하기 위해 만들어진 것 : named argument  
+<br>
+
+``` dart
+class Person{
+  String? name; 
+  int? age;
+  String? gender;
+  
+  Person({String? name, int? age, String? gender}){
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
+}
+```
+argument를 중괄호로 묶어 주는 경우 선택하여 입력 가능  
+단, 해당 경우에는 null이 들어갈 수 있는 경우에는 타입 뒤에 ?를 작성해 주어야 함  
+위와 같이 named argument를 사용하는 경우에는 인스턴스를 생성할 때 아래와 같이 변수명:값 형태로 작성해 주어야 함 (ex. home: 등)  
+```dart
+Person p1 = new Person(name: 'Tom');
+```
+※ Dart 2.0 이후에는 인스턴스를 생성하는 경우 new 키워드를 작성하지 않아도 됨  
+<br>
+
+## App bar icon button
++ leading : 아이콘 버튼이나 간단한 위젯을 왼쪽에 배치할 때
++ actions : 복수의 아이콘 버튼 등을 오른쪽에 배치할 때
++ onPressed : 반환값이 없는(void) 함수 형태로 일반 버튼이나 아이콘 버튼을 터치했을 때 일어나는 이벤트를 정의  
+<br>
+
+## Drawer menu
++ ListView : 여러 줄의 정보를 보여 주는 목록
++ ListTile : 각 리스트 한 줄 한 줄을 의미, 아이콘 배치를 수월하게 해줌  
+<br> 
+
+### 위젯 트리
+1. Drawer
+2. ListView
+3. UserAccountDrawerHeader 
+4. ListTile : Icon, Text, onTap
+   onPressed와 onTap의 차이  
+   기능 상은 거의 동일  
+   onPressed : 주로 버튼에 사용됨  
+   onTap : gestureDetector나 inkWell 등에 주로 사용됨 (길게 누르기, 두 번 탭하기 등 어떤 동작에 반응하는 경우)  
+<br>
+
+## BuildContext
+### BuildContext의 정의
++ widget tree에서 현재 widget의 위치를 알 수 있는 정보  
+  build 함수는 Scaffold Widget을 리턴하는데 이때 위젯트리 상에서 어디에 위치하는가에 대한 정보를 가지고 있는 context를 넣어서 리턴한다는 의미
++ 모든 위젯은 본인만의 BuildContext를 가지고 있고, __이 BuildContext는 stateless 위젯이나 state 빌드 메서드에 의해 리턴된 위젯의 부모가 된다.__  
+  Scaffold 위젯은 부모인 Mypage의 context를 그대로 물려받음 따라서 어느 프로젝트에서 Scaffold 위젯의 위치가 궁금하다고 Scaffold 위젯의 context를 참조하면 에러 발생 (Scaffold 위젯의 위치 정보를 가지고 있지 않음)  
+  Scaffold 위젯 아래에서 build 메소드로 위젯을 리턴하면 그 위젯은 부모인 Scaffold 위젯의 진짜 context를 물려받을 수 있음  
+<br>
+
+### build 메소드
+``` dart
+class MyPage extends StatelessWidget {
+  const MyPage({Key? key}) : super(key: key);
+   Widget build(BuildContext context){} // Widget 타입 메소드
+}
+```
+<br>
+
+## Snack bar
+### Scaffold.of(context) method 
+현재 주어진 context에서 위로 올라가면서 가장 가까운 Scaffold를 찾아서 반환하라  
+→ Something.of(context) : 위로 올라가면서 가장 가까운 Something을 찾아서 반환하라  
+Scaffold.of(context).showSnackBar()는 deplicated됨 → ScaffoldMessenger.of(context).showSnackBar() 형태로 사용해야 함  
+ScaffoldMessenger를 사용하면 Builder를 이용해 새로 만들지 않아도 됨  
+<br>
+
+## Container 위젯
+child가 없을 경우 컨테이너 안에서 최대의 공간을 차지하려고 함 따라서 아무것도 설정하지 않는 경우 스크린 화면 전체를 차지  
+child 위젯을 지정하는 경우 child 위젯 크기로 줄어들게 됨  
+컨테이너는 오직 하나만의 child를 가질 수 있음  
+<br>
+
+## 레이아웃 관련 사이트
+[:link: 레이아웃 관련 사이트](https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e)
