@@ -32,4 +32,17 @@ gradle은 기본적으로 의존 관계에 있는 모든 라이브러리를 가�
 + 커넥션 풀 : HikariCP
 + WEB(thymeleaf)
 + 로깅 SLF4J & LogBack
-+ 테스트
++ 테스트  
+<br>
+
+## Thymeleaf
+Natural templates : 마크업을 깨지 않고 그대로 쓰기 때문에 웹브라우저에서 열림  
+단점 : 태그를 무조건 닫아 주지 않으면 에러 발생 (2점대 버전 → 현재 업그레이드로 개선)  
+<br>
+
+## View 환경 설정
++ 정적인 페이지는 static 폴더에
++ 랜더링이 필요한 페이지는 templates 폴더에  
+  springboot가 prefix surfix 설정해 줌  
+
+※ implementation 'org.springframework.boot:spring-boot-devtools'를 사용하면 recompile만으로도 뷰 변경 가능 (서버 재시작 안 해도 됨)
