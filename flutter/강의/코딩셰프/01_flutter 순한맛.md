@@ -226,4 +226,21 @@ child 위젯을 지정하는 경우 child 위젯 크기로 줄어들게 됨
 <br>
 
 ## 레이아웃 관련 사이트
-[:link: 레이아웃 관련 사이트](https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e)
+[:link: 레이아웃 관련 사이트](https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e)  
+<br>
+
+## Router
+스마트폰에서 보여지는 하나의 페이지를 의미  
+반드시 Material 위젯 아래에 child로 생성되어야 함  
+<br>
+
+## Navigator
+모든 앱페이지를 관리하며, stack이라는 자료구조 형식으로 라우터 객체들을 관리  
+push, pop 메소드 제공   
+<br>
+
+### stack 자료구조
+데이터가 들어오는대로 밑에서부터 하나씩 쌓이는 구조  
+push : 데이터를 쌓아올림 (추가)  
+pop : 제일 위의 데이터를 없앰 (제거)  
+따라서 페이지를 push하면 이전 페이지가 사라지고, 그것을 대체하는 것이 아니라 그 위에 쌓이는 것
