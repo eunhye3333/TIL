@@ -216,7 +216,13 @@ class MyPage extends StatelessWidget {
 현재 주어진 context에서 위로 올라가면서 가장 가까운 Scaffold를 찾아서 반환하라  
 → Something.of(context) : 위로 올라가면서 가장 가까운 Something을 찾아서 반환하라  
 Scaffold.of(context).showSnackBar()는 deplicated됨 → ScaffoldMessenger.of(context).showSnackBar() 형태로 사용해야 함  
-ScaffoldMessenger를 사용하면 Builder를 이용해 새로 만들지 않아도 됨  
+ScaffoldMessenger를 사용하면 Builder를 이용해 새로 만들지 않아도 됨 (2.0부터 도입)  
+<br>
+
+### ScaffoldMessenger 
+기존의 Snack bar는 해당 페이지에서만 사용할 수 있기 때문에 다른 라우트로 넘어가면 스낵바가 사라짐  
+ScaffoldMessenger : 자손 Scaffold 위에서 Snack bar 관리 (Snack bar가 더 이상 Scaffold에서 관리되지 않음)  
+따라서 만약 페이지가 넘어가는 경우 Snack Bar를 사라지게 하고 싶은 경우에는 Material app이 제공하는 루트 ScaffoldMessenger를 사용하는 것이 아니라, 별도의 ScaffoldMessenger를 생성해 주어야 함
 <br>
 
 ## Container 위젯
@@ -243,4 +249,48 @@ push, pop 메소드 제공
 데이터가 들어오는대로 밑에서부터 하나씩 쌓이는 구조  
 push : 데이터를 쌓아올림 (추가)  
 pop : 제일 위의 데이터를 없앰 (제거)  
-따라서 페이지를 push하면 이전 페이지가 사라지고, 그것을 대체하는 것이 아니라 그 위에 쌓이는 것
+따라서 페이지를 push하면 이전 페이지가 사라지고, 그것을 대체하는 것이 아니라 그 위에 쌓이는 것  
+<br>
+
+## 멀티 페이지 이동
+멀티 페이지 이동 기능 구현 시에는 argument를 home이 아닌 initialRoute 사용 (두 개가 돈시에 존재하는 경우 에러 발생)  
+routes argument는 이동할 페이지들의 이름을 지정하고 생성하는 역할을 함, 자료형은 Map (key: String, 값: Widget builder)  
+<br>
+
+## String Interpolation
+String Interpolation : 문자열을 출력하거나 선언할 때 중간중간 다른 변수를 끼워넣는 것  
+``` dart
+void main(){
+  String name = 'Sean';
+  print(name);
+
+  print("Hi, $name, what's up?"); // Hi, Sean, what's up?
+}
+```
+<br>
+
+## Collection and Generic
+Collection : 데이터들을 모아서 가지고 있는 자료구조  
+Generic : Collection이 가지고 있는 데이터들의 데이터 타입을 지정해 코드의 안정성을 확보하고 코드의 재사용성을 가능하게 함  
+<br>
+
+### list
+list : flutter에서는 배열을 list라고 함  
+fixed-length list : 리스트 내의 데이터 개수가 지정한 개수만큼만 올 수 있음  
+growable list : 개수에 제한이 없음  
+``` dart
+void main(){
+  var number = new List(5); // 리스트의 개수가 제한된 fixed-length list
+  var number2 = new List(); // 리스트의 개수가 제한되지 않은 growable list
+
+  List<dynamic> number3 = new List(); // 이렇게 선언 가능 
+  // <dynamic> : 모든 타입의 데이터가 들어올 수 있음
+
+  number3.add(1);
+  number3.add('test');
+  number3.add(7.4);
+  // 타입을 지정해 주지 않았기 때문에 리스트 안에 다양한 타입의 변수들이 들어가 있음 (dart는 리스트에 들어갈 수 있는 모든 타입을 객체로 취급)
+  // dart는 함수나 boolean 값도 객체로 취급해서 list에 추가 가능
+  
+}
+```
