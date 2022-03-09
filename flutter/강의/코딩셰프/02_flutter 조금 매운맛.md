@@ -27,3 +27,18 @@ Rebuild : 모든 것을 바꾸는 것 (새로 만드는 것)
 Stateful Widget이 rebuild되는 경우  
 + Child 위젯의 생성자를 통해서 데이터가 전달될 때
 + Internal state가 바뀔 때
+
+## const 변수 / final 변수
+### const
+const : 컴파일 시에 상수화, 컴파일 시에 상수화가 되면 런타임 시에도 값이 변하지 않음
+
+### final
+초기화 방법
+1. 변수 선언 시 초기화
+2. 객체 생성 시에 외부 데이터를 받아 생성자를 통해 초기화  
+final : run-time constant (런타임 시에 상수화), final 변수는 rebuild 될 수 있음
+<br>
+
+## Focus
++ FocusNode : 포커스를 받는 특정 위젯을 식별
++ FocusScope : 어떤 위젯들까지 포커스를 받는지 범위를 나타냄
