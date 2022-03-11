@@ -41,4 +41,21 @@ final : run-time constant (런타임 시에 상수화), final 변수는 rebuild 
 
 ## Focus
 + FocusNode : 포커스를 받는 특정 위젯을 식별
-+ FocusScope : 어떤 위젯들까지 포커스를 받는지 범위를 나타냄
++ FocusScope : 어떤 위젯들까지 포커스를 받는지 범위를 나타냄  
+<br>
+
+## Future, Async, await
+### Future
+미래에 String, int, image 등 그 무언가가 구체적인 결과물로 나타내서 실제적인 객체로 반환된다는 의미 (일종의 약속이자 그 결과를 미래에 실제로 확인할 수 있는 사물)  
+제네릭처럼 결과물을 미리 지정 가능  
+
+Future 클래스는 비동기 작업을 할 때 사용  
+Future는 일정 소요시간 후에 실제 데이터나 에러를 반환  
+
+### Async, await
+Synchronous : 한 번에 한 가지 일만 하는 것  
+Asynchronous : 한 번에 여러 가지 일을 하는 것  
+await : 작업이 처리될 때까지 기다리라는 의미
+
+async 클래스는 await 메서드를 가지고 있음
+- await로 선언된 메서드는 응답이 처리될 때까지 대기
