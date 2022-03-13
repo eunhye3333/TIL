@@ -4,8 +4,7 @@ void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
   theme: ThemeData(
       brightness: Brightness.light,
-      primaryColor: Colors.blue,
-      accentColor: Colors.orange
+      primaryColor: Colors.grey,
   ),
   home: MyApp(),
 ));
@@ -32,10 +31,12 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("TODO"),
-        backgroundColor: Colors.black12,
+        title: Text("TODO List"),
+        backgroundColor: Colors.cyan,
+        elevation: 0.0,
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.cyan,
         onPressed: () {
           showDialog(
               context: context,
@@ -48,14 +49,14 @@ class _MyAppState extends State<MyApp> {
                       },
                     ),
                     actions: <Widget>[
-                      FlatButton(onPressed: (){
+                      TextButton(onPressed: (){
                         setState(() {
                           todos.add(input);
                         });
                         Navigator.of(context).pop();	// input 입력 후 창 닫히도록
                       },
                           child: Text("Add"))
-                    ]
+                    ],
                 );
               });
         },
@@ -70,7 +71,7 @@ class _MyAppState extends State<MyApp> {
             return Dismissible(	// 삭제 버튼 및 기능 추가
                 key: Key(todos[index]),
                 child: Card(
-                    elevation: 4,
+                    elevation: 2,
                     margin: EdgeInsets.all(8),
                     shape: RoundedRectangleBorder(borderRadius:
                     BorderRadius.circular(8)
