@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/writeTodo.dart';
 
 void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
@@ -6,7 +7,7 @@ void main() => runApp(MaterialApp(
       brightness: Brightness.light,
       primaryColor: Colors.grey,
   ),
-  home: MyApp(),
+  home: WritePage(),
 ));
 
 class MyApp extends StatefulWidget {
