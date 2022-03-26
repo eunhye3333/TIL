@@ -1,7 +1,7 @@
 # 자바 ORM 표준 JPA 프로그래밍 - 기본편 - 인프런
 [:link: Link](https://www.inflearn.com/course/ORM-JPA-Basic/dashboard)  
 <br>
-![image](https://user-images.githubusercontent.com/77559262/155824793-84d7012c-ee9a-4eef-875a-b390ccafa343.png)  
+![image](https://user-images.githubusercontent.com/77559262/160228675-97845847-131c-4463-89c1-d491f402d51e.png)
 <br>
 
 # 목차
