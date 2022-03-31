@@ -35,7 +35,7 @@ public class Order {
     private Delivery delivery;
 
     private LocalDateTime orderDate; // 주문 시간
-    // java8에서는 LocalDateTime을 쓰면 매핑을 안 해줘고 hibernate가 알아서 지원해줌
+    // java8에서는 LocalDateTime을 쓰면 매핑을 안 해줘도 hibernate가 알아서 지원해줌
 
     @Enumerated(EnumType.STRING)
     private OrderStatus status; // 주문 상태 [ORDER, CANCEL]
