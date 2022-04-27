@@ -25,7 +25,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-devtools'
 	
-	implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.0") // 스프링부트가 알아서 버전을 설정해 주지 않은 라이브러리는 직접 버전 작성
+	implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.0")
+	implementation 'junit:junit:4.13.1'
+	implementation 'junit:junit:4.13.1'// 스프링부트가 알아서 버전을 설정해 주지 않은 라이브러리는 직접 버전 작성
 
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
