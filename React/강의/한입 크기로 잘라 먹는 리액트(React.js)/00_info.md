@@ -2,15 +2,12 @@
 [:link: Link](https://www.inflearn.com/course/%ED%95%9C%EC%9E%85-%EB%A6%AC%EC%95%A1%ED%8A%B8#)
 <br>
 
-![image](https://user-images.githubusercontent.com/77559262/154825443-8aa9a3e7-e308-403a-bad5-9324a7362d07.png)
+![image](https://user-images.githubusercontent.com/77559262/165709039-a9691d64-b015-4608-a7d3-703a16769266.png)  
+<br>
 
 # 목차
-## 섹션 1. JavaScript 기본
-
-<br>  
-
-## 섹션 2. JavaScript 응용
-  
+## 섹션 1. JavaScript 기본, 섹션 2. JavaScript 응용
+[:link: 02_JavaScript](https://github.com/eunhye3333/TIL/blob/main/React/%EA%B0%95%EC%9D%98/%ED%95%9C%EC%9E%85%20%ED%81%AC%EA%B8%B0%EB%A1%9C%20%EC%9E%98%EB%9D%BC%20%EB%A8%B9%EB%8A%94%20%EB%A6%AC%EC%95%A1%ED%8A%B8(React.js)/02_JavaScript.md)  
 <br>  
 
 ## 섹션 3. Node.js 기초
