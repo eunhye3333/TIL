@@ -481,4 +481,199 @@ let object = { one: 1, two: 2, three: 3 };
 
 let { one:a, two:b, three:c } = object; 
 ```
-배열처럼 기본값 설정 가능
+배열처럼 기본값 설정 가능  
+<br>
+
+### Spread 연산자
+Spread 연산자 : 중복된 프로퍼티들을 계속해서 작성하는 경우에 이를 해결하기 위해 사용할 수 있음 (...)  
+객체의 값을 새로운 객체에 펼쳐 주는 역할
+```javascript
+const cookie = {
+  base: "cookie",
+  madeIn: "korea"
+};
+
+const blueberryCookie = {
+  ...cookie, // Spread 연산자
+  toping: "blueberry"
+};
+
+console.log(blueberryCookie);
+```
+배열을 합치는 경우에도 사용 가능하며 concat과 달리 합치는 배열 중간에도 유연하게 값을 삽입 가능
+```javascript
+const noTopingCookies = ["촉촉한쿠키", "안촉촉한쿠키"];
+const topingCookies = ["초코칩쿠키", "딸기쿠키"];
+
+const allCookies = [...noTopingCookies, ...topingCookies]; // 이렇게 배열을 합칠 수 있음
+
+```
+<br>
+
+### 동기 & 비동기
+자바스크립트의 코드 실행 방식 : 자바스크립트는 싱글 스레드 방식으로 작동
++ 동기 방식 : 스레드 하나로 작성된 순서대로 작업을 처리함 먼저 작성된 코드가 모두 실행되면 다음 코드 실행  
+하나의 작업이 너무 오래 걸리면 모든 작업이 오래 걸림 (성능상 문제 발생)   
+= 블로킹 방식 : 스레드에서 작업 하나가 수행되고 있을 때 다른 작업을 동시에 할 수 없는 방식  
++ 비동기 방식 : 여러 개의 작업을 동시에 실행  
+작업이 정상적으로 끝났는지를 확인하기 위해 콜백 함수를 붙여서 실행 (비동기 처리의 결과값 또는 끝났는지 확인)  
+= 논 블로킹 방식  
+setTiemout() : 타이머를 만들 수 있는 내장 비동기 함수로 콜백함수와 delayTime이 매개변수로 들어감 delayTime은 밀리세컨드 단위이며, 해당 시간 뒤에 콜백 함수를 실행  
+
+    ```javascript
+    function taskA(){
+        setTimeout(()=>{
+            // 코드
+        }, delayTime);
+    }
+    ```
+    비동기 처리의 값을 이용해야 하는 경우 콜백 함수 사용
+
+JS Engin : Heap과 Call Stack 두 개의 공간으로 이루어짐  
+스레드는 Call Stack 하나만을 담당
++ Heap : 변수나 상수들의 메모리 할당
++ Call Stack : 작성한 코드의 실행에 따라 호출 스택을 쌓음  
+프로그램이 실행되면 Main Context가 제일 먼저 들어옴 (제일 마지막에 나감)  
+
+Web APIs, Event Loop, Callback Queue : 자바스크립트와 웹 간의 상호작용을 처리하기 위한 요소로 가장 대표적인 상호작용은 비동기 처리임  
+자바스크립트는 비동기로 실행되는 함수를 Call Stack에서 Web APIs로 넘기기 때문에 바로 다음 함수가 실행됨  
+비동기 함수의 콜백 함수는 비동기 함수가 실행된 후 Callback Queue로 옮겨지고, Event Loop를 통해 Call Stack으로 다시 옮겨짐  
+<br>
+
+### Promise
+콜백 지옥 : 연속되는 비동기 함수를 처리할 때 비동기 함수의 값을 사용하기 위해서 콜백이 계속해서 길어지는 현상  
+Promise : 자바스크립트의 비동기를 돕는 객체로 비동기 함수에 콜백을 줄지어 전달하지 않아도 됨
+
+비동기 작업이 가질 수 있는 3가지 상태 
++ Pending (대기 상태) : 비동기 작업이 진행 중이거나 시작할 수 없는 상태
++ Fulfilled (성공) : 비동기 작업이 의도한대로 정상적으로 완료된 상태  
+resolve : 비동기 작업이 Pending 상태에서 Fulfilled 상태가 되는 것
++ Rejected (실패) : 비동기 작업이 실패했음을 의미 (응답 없음, 시간 초과 등)  
+reject : 비동기 작업이 Pending 상태에서 Rejected 상태로 변화하는 것
+```javascript
+function isPositive(number, resolve, reject) {
+  setTimeout(() => {
+    if (typeof number === "number") {
+      // 성공 -> resolve
+      resolve(number >= 0 ? "양수" : "음수 ");
+    } else {
+      // 실패 -> reject
+      reject("주어진 값이 숫자형 값이 아닙니다");
+    }
+  }, 2000);
+}
+
+isPositive(
+  10,
+  (res) => {
+    console.log(res);
+  },
+  (err) => {
+    console.log(err);
+  }
+);
+```
+
+Promise 사용 방법
+```javascript
+function isPositiveP(number){
+  const executor = (resolve, reject)=>{ // 실행자 : 비동기 작업을 실질적으로 수행
+    setTimeout(()=>{
+      if (typeof number === "number") {
+        resolve(number >= 0 ? "양수" : "음수 ");
+      } else {
+        reject("주어진 값이 숫자형 값이 아닙니다");
+      }
+    }, 2000);
+  };
+
+  const async = new Promise(executor); // 전달하는 순간 자동으로 executor 수행됨
+  return async; // promise 객체 반환
+}
+
+const res = isPositiveP(101); // 반환받은 promise 객체 사용
+// res는 비동기 처리의 결과값인 resolve 또는 reject를 가지고 있음
+
+// 비동기처리의 결과 사용
+res
+  .then((res) => {
+    console.log("작업 성공 : ", res); // resolve
+  })
+  .catch((err) => {
+    console.log("작업 실패 : ", err); // reject
+  });
+
+// 실행자를 변수로 만들지 않고 바로 넣기
+function isPositiveP(number){
+  return = new Promise((resolve, reject) => {
+    setTimeout(()=>{
+      if (typeof number === "number") {
+        resolve(number >= 0 ? "양수" : "음수 ");
+      } else {
+        reject("주어진 값이 숫자형 값이 아닙니다");
+      }
+    }, 2000);
+  });
+}
+```
+
+콜백 지옥을 탈출하는 방법 : then 체이닝
+```javascript
+taskA(5, 1).then((a_res) => {
+    console.log("A RESULT : ", a_res);
+    return taskB(a_res); // taskA의 결과를 리턴 : taskB의 Promise 객체가 반환됨
+}).then((b_res)=>{ // 따라서 Promise 객체이기 때문에 then을 연결하여 사용 가능
+    console.log("B RESULT : ", b_res);
+})
+```
+<br>
+
+### async
+async : 비동기를 다루는 기능이자 Promise를 더 쉽게 사용할 수 있도록 도와주는 기능  
+함수 앞에 async 키워드를 붙여 주면 해당 함수는 Promise를 리턴하는 비동기 처리 함수가 됨
+```javascript
+async function helloAsync() {
+  return "hello Async"; // resolve의 결과값이 됨
+}
+
+helloAsync().then((res) => {
+  console.log(res);
+});
+```
+<br>
+
+### await
+await : 비동기 함수의 호출 앞에 붙이면 비동기함수가 동기 함수처럼 작동함  
+await이 붙은 함수가 실행되기 전에는 그 아래 코드가 실행되지 않으며, async 함수 내에서만 사용 가능
+```javascript
+function delay(ms){
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms); // ms만큼 기다리기
+    });
+}
+
+async function helloAsync() {
+    await delay(3000);
+    return "hello Async"; 
+}
+
+helloAsync().then((res) => {
+  console.log(res);
+});
+``` 
+<br>
+
+### API 호출
+API : 클라이언트와 서버를 연결하는 방법  
+응답을 언제 받을 수 있을지 모르기 때문에 비동기 처리로 진행하여야 함  
+[JSON Placeholder](https://jsonplaceholder.typicode.com/) : API 학습을 위해 더미 데이터를 반환하는 Open API  
+
+fetch() : 자바스크립트에서 API 호출을 할 수 있는 내장함수로 Promise 객체를 반환  
+fetch를 통해 API 값을 가지고 오게 되면 API 성공 객체 자체(resolve의 리턴값)를 반환하기 때문에 Response 객체가 반환됨(결과값의 포장지)
+```javascript
+let response = fetch("https://jsonplaceholder.typicode.com/posts").then(
+  (res) => {
+    console.log(res);
+  }
+);
+```
