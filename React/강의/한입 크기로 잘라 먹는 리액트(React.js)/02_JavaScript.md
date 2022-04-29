@@ -399,3 +399,86 @@ end에 명시된 인덱스 -1까지만 반환함
 <br>
 
 ## JavaScript 응용
+### Truthy & Falsy
+Truthy & Falsy : boolean 값을 넣지 않아도 참이나 거짓으로 인식되는 속성 (참/거짓이 아니어도 참/거짓으로 인식되는 속성)  
+빈 문자열, undefined 등을 false로 판단함  
+예외처리 시 유용함 
++ Truthy : 빈 배열, 빈 객체, 0이 아닌 숫자, 값이 있는 문자열, Infinity  
++ Falsy : null, undefined, 숫자 0, NaN, 빈 문자열  
+<br>
+
+### 삼항연산자
+삼항연산자 : 간단한 조건식을 한 줄로 표현 가능  
+조건식 ? 참일 때 수행할 식 : 거짓일 때 수행할 식  
+삼항연산자의 조건식에도 Truthy와 Falsy 사용 가능 
+```javascript
+let a;
+a ? true : false; // Truthy, Falsy 사용
+```
+중첩해서 사용하면 else if처럼 사용 가능하지만 가독성이 떨어짐  
+<br>
+
+### 단락회로 평가
+단락회로 평가 : 왼쪽에서 오른쪽으로 연산하게 되는 논리 연산자의 연산 순서를 이용하는 문법으로 피연산자 중 뒤에 위치한 피연산자를 확인할 필요 없이 연산을 끝내는 것  
+ex. && 연산의 경우 두 개 다 참일 때만 참이기 때문에 첫 번째 피연산자가 거짓인 경우에는 뒤의 피연산자를 확인할 필요 없이 거짓이 됨  
+Truthy/Falsy와 단락회로 평가를 같이 사용하는 경우 코드 길이 단축 가능
+```javascript
+// 1. &&만 사용 : person 값이 그래도 출력되기 때문에 null 또는 undefined 값이 출력될 수 있음
+const getName = (person) => {
+    return person && person.name; // 단락회로 평가와 Falsy를 같이 사용
+    // person이 Falsy(undefined)이므로 뒤에 있는 person.name에 접근하지 않고 person을 반환
+}
+
+let person;
+const name = getName(person);
+console.log(name);
+
+// 2. || 같이 사용 : 앞이 true이거나 Truthy하면 뒤를 고려하지 않고 앞에 있는 것 반환
+const getName = (person) => {
+    const name = person && person.name;
+    return name || "객체가 아닙니다"; 
+}
+
+let person;
+const name = getName(person);
+console.log(name);
+```
+<br>
+
+### 비 구조화 할당 
+비 구조화 할당(구조 분해 할당) : 여러 개의 변수에 배열의 값을 간편하게 할당하는 기술  
+
+배열의 비 구조화 할당 : 대괄호를 이용하여 배열의 값을 순서대로 변수에 할당 가능
+```javascript
+let arr = [1, 2, 3];
+
+let [one, two, three] = arr; // one, two, three라는 변수에 각각 1, 2, 3이 할당됨 (배열의 기본 변수 비 구조화 할당)
+
+let [one, two, three] = [1, 2, 3]; // 다음과 같은 방식으로도 사용 가능 (배열의 선언 분리 비 구조화 할당)
+```
+배열의 값을 변수에 할당받지 못하는 상황에 변수의 기본값을 설정 가능 (undefined, null 등이 출력되면 안 되는 경우에 유용)
+```javascript
+let [one, two, three, four = 4] = [1, 2, 3];
+```
+swap을 하는 경우 유용함
+```javascript
+let a = 1;
+let b = 40;
+
+[a, b] = [b, a]; // 오른쪽에 새로운 배열을 만든 것
+```
+<br>
+
+객체의 비구조화 할당 : 키 값을 기준으로 키와 동일한 이름의 변수에 저장 (순서 상관 없음)
+```javascript
+let object = { one: 1, two: 2, three: 3 };
+
+let { one, two, three } = object; 
+```
+변수의 이름을 다르게 사용하고 싶은 경우 :을 이용해 바꿀 수 있음
+```javascript
+let object = { one: 1, two: 2, three: 3 };
+
+let { one:a, two:b, three:c } = object; 
+```
+배열처럼 기본값 설정 가능
