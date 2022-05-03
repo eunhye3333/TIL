@@ -16,7 +16,7 @@ Apache Kafka : 소스 애플리케이션과 타켓 애플리케이션의 커플�
 
 Source Application -데이터→ Kafka -데이터→ Target Application
 
-![image-20220503153923525](C:\Users\ABC\AppData\Roaming\Typora\typora-user-images\image-20220503153923525.png)
+![image](https://user-images.githubusercontent.com/77559262/166422342-1f3c7d9a-b196-4f9d-ab68-2c17b8ac1aa9.png)
 
 
 
@@ -130,34 +130,3 @@ ack : 고가용성을 유지할 수 있는 장치, 0, 1, all 세 개의 옵션 �
 ### ISR (In Sync Replica)
 
 원본 파티션과 복제본 파티션을 합한 것
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
