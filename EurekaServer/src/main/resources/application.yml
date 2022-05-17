@@ -1,0 +1,10 @@
+server:
+  port: 8761
+  
+spring:
+  application:
+    name: EurekaServer
+    
+eureka:
+  client:
+    fetch-registry: false # 마이크로 서비스 인스턴스 목록을 로컬에 캐시할 것인지 여부 설정, true로 설정 시 검색할 때마다 Eureka Server를 호출하는 대신 레지스트리가 로컬로 캐싱됨 
