@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: zuul
+    
+server:
+  port: 8080
+  
+zuul:
+  routes:
+    catalog: # 매핑할 URL
+      path: /catalogs/**
+      service-id: catalog
+      strip-prefix: false
+    customer:
+      path: /customers/**
+      service-id: customer
+      
+eureka:
+  instance: # 포트나 이름 등 현재 Eureka Client의 행동을 재정의하는 설정
+    non-secure-port: ${server.port}
+    prefer-ip-address: true # 서비스의 호스트 이름이 아닌 IP 주소를 Eureka Server에 등록하도록 지정
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
