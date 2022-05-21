@@ -19,11 +19,13 @@ public class JpaMain {
 
         try{
             // 데이터 삽입
+            // 비영속
             Member member = new Member();
 
             member.setId(1L);
             member.setName("helloA");
-
+            
+            // 영속
             em.persist(member);
 
             tx.commit();
