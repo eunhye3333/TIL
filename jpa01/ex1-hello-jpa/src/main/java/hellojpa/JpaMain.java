@@ -26,7 +26,9 @@ public class JpaMain {
             member.setName("helloA");
             
             // 영속
+            System.out.println("=== BEFORE ===");
             em.persist(member);
+            System.out.println("=== AFTER ==="); // 쿼리가 날아가지 않는 것을 확인 가능
 
             tx.commit();
 
