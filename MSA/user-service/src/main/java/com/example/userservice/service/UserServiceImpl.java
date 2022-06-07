@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
         if (userEntity == null)
             throw new UsernameNotFoundException(username + ": not found");
 
-        return new User(userEntity.getEmail(), userEntity.getEncryptedPwd(),
+        return new User(userEntity.getEmail(), userEntity.getPwd(),
                 true, true, true, true,
                 new ArrayList<>());
     }
@@ -63,7 +63,7 @@ public class UserServiceImpl implements UserService {
         ModelMapper mapper = new ModelMapper();
         mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         UserEntity userEntity = mapper.map(userDto, UserEntity.class);
-        userEntity.setEncryptedPwd(passwordEncoder.encode(userDto.getPwd()));
+        userEntity.setPwd(passwordEncoder.encode(userDto.getPwd()));
 
         userRepository.save(userEntity);
 
@@ -80,8 +80,6 @@ public class UserServiceImpl implements UserService {
             throw new UsernameNotFoundException("User not found");
 
         UserDto userDto = new ModelMapper().map(userEntity, UserDto.class);
-        List<ResponseOrder> ordersList = orderServiceClient.getOrders(userId);
-        userDto.setOrders(ordersList);
 
         return userDto;
     }
