@@ -1,13 +1,11 @@
-package com.example.msa;
+package com.example.apigateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MsaExampleApplication {
-
+public class ApigatewayApplication {
     public static void main(String[] args) {
-        SpringApplication.run(MsaExampleApplication.class, args);
+        SpringApplication.run(ApigatewayApplication.class);
     }
-
 }
