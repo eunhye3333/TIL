@@ -4,4 +4,5 @@ include 'config-service'
 include 'first-service'
 include 'apigateway'
 include 'user-service'
+include 'second-service'
 
