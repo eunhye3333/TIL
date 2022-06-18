@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8af3c2db-58ab-4289-83f2-b9be9f2599cd" name="Changes" comment="" />
+    <list default="true" id="8af3c2db-58ab-4289-83f2-b9be9f2599cd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/bootstudy.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jpa01/.idea/jpa01.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jpa01/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jpa01/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jpa01/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpa01/ex1-hello-jpa/src/main/java/hellojpa/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpa01/ex1-hello-jpa/src/main/java/hellojpa/Member.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +47,8 @@
       <option name="presentableId" value="Default" />
       <updated>1651408825618</updated>
       <workItem from="1651408826787" duration="46000" />
+      <workItem from="1653185465271" duration="19000" />
+      <workItem from="1653185883170" duration="11000" />
     </task>
     <servers />
   </component>
