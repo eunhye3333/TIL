@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties.Authentication;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,8 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-@RequestMapping(AuthRestController.URL_PREFIX)
-public class AuthRestController {
+@RequestMapping(UserController.URL_PREFIX)
+public class UserController {
     static final String URL_PREFIX = "/auth";
     static final String LOGIN = "/login";
 
@@ -47,13 +47,11 @@ public class AuthRestController {
             throw new IllegalArgumentException("비밀번호를 확인하세요.");
         }
 
-        //Authentication authentication = new UserAuthentication(request.getId(), null, null);
-        //String token = JwtTokenProvider.generateToken(authentication);
+        Authentication authentication = new UserAuthentication(request.getId(), null, null);
+        String token = JwtTokenProvider.generateToken(authentication);
 
-//        Response response = Response.builder().token(token).build();
-//
-//        return okResponse(response);
+        Response response = Response.builder().token(token).build();
 
-        return null;
+        return ResponseEntity.ok(response);
     }
 }

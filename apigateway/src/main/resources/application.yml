@@ -19,5 +19,9 @@ spring:
           uri: lb://FIRST-SERVICE # lb : 로드밸런싱 -> first-service의 application.yml 주소를 받아옴 lb를 작성하지 않는 경우 직접 작성해주면 됨
           predicates:
             - Path=/first-service/**
+        - id: second-service
+          url: lb://SECOND-SERVICE
+          predicates:
+            - Path=/second-service/**
   main:
     web-application-type: reactive
