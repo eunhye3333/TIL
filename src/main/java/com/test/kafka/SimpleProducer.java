@@ -27,7 +27,7 @@ public class SimpleProducer {
         // message 전달
         for(int i = 0; i < 5; i++){
             String v = "hello " + i;
-            producer.send(new ProducerRecord<String, String>("quickstart-events", v));
+            producer.send(new ProducerRecord<String, String>("quickstart-events", v)); // quickstart-events 토픽에 v에 있는 데이터가 들어가게 됨
         }
 
         producer.flush();
