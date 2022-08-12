@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/querydsl
+    username: querydsl
+    password: querydsl
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create # 애플리케이션 로딩 시점에 테이블을 다 드랍하고 다시 생성
+                       # create-drop : 애플리케이션 종료 시 테이블을 다 드랍
+    properties:
+      hibernate:
+#        show_sql: true # 쿼리를 볼 수 있음 (System.out으로 출력)
+        format_sql: true
+
+logging_level:
+  org.hibernate.SQL: debug # hibernate가 실행하는 쿼리들이 logger로 출력됨
+#  org.hibernate.type: trace # 바인딩된 파라미터 값을 확인 가능
