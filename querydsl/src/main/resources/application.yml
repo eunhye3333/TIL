@@ -13,6 +13,7 @@ spring:
       hibernate:
 #        show_sql: true # 쿼리를 볼 수 있음 (System.out으로 출력)
         format_sql: true
+        use_sql_comments: true # querydsl을 jpql로 출력
 
 logging_level:
   org.hibernate.SQL: debug # hibernate가 실행하는 쿼리들이 logger로 출력됨
