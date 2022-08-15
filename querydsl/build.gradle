@@ -28,7 +28,7 @@ dependencies {
 	implementation 'com.querydsl:querydsl-jpa:5.0.0' // 실제 애플리케이션 작성에 필요한 라이브러리
 	implementation 'com.querydsl:querydsl-apt:5.0.0' // gradle 5.0 이상 추가, 코드 제너레이션 용도로 사용되는 라이브러리
 
-	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.8' // 바인딩 파라미터를 쿼리에서 바로 확인할 수 있는 라이브러리
+//	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.8' // 바인딩 파라미터를 쿼리에서 바로 확인할 수 있는 라이브러리
 
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
