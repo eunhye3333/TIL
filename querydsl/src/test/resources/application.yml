@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: local
+    active: test # 자동으로 추가하는 데이터가 test시에는 추가되지 않도록 별도의 yml 생성
 
   datasource:
     url: jdbc:h2:tcp://localhost/~/querydsl
