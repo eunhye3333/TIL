@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const DiaryEditor = () => {
+  const authorInput = useRef(); // React.MutableRefObject -> HTML DOM 요소에 접근하게 해줌
+  const contentInput = useRef();
+
   const [state, setState] = useState({
     author: "",
     content: "",
@@ -21,7 +24,20 @@ const DiaryEditor = () => {
   }; // onChange 합치기
 
   const handleSubmit = () => {
-    console.log(state);
+    if (state.author.length < 1) {
+      // alert("작성자는 최소 1글자 이상 입력해주세요");
+      // focus
+      authorInput.current.focus();
+      return;
+    }
+
+    if (state.content.length < 5) {
+      // alert("일기 본문은 최소 5글자 이상 입력해 주세요");
+      // focus
+      contentInput.current.focus();
+      return;
+    }
+
     alert("저장 성공");
   };
 
@@ -30,8 +46,10 @@ const DiaryEditor = () => {
       <h2>오늘의 일기</h2>
       <div>
         <input
+          ref={authorInput}
           name="author"
           value={state.author}
+          type="text"
           // onChange={(e) => {
           //   // console.log(e.target.value);
           //   // console.log(e.target.name); // 타겟의 name 출력 가능
@@ -49,6 +67,7 @@ const DiaryEditor = () => {
       </div>
       <div>
         <textarea
+          ref={contentInput}
           name="content"
           value={state.content}
           onChange={handleChangeState}
