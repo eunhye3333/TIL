@@ -1,4 +1,4 @@
-import DiaryItem from "./DiartItem";
+import DiaryItem from "./DiaryItem";
 
 const DiaryList = ({ diaryList }) => {
   console.log(diaryList);
