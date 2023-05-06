@@ -48,7 +48,7 @@ function App() {
     setData([newItem, ...data]); // 원래 데이터에 새로운 일기 추가 (새로운 일기가 제일 위에 오게)
   };
 
-  const onDelete = (targetId) => {
+  const onRemove = (targetId) => {
     const newDiaryList = data.filter((it) => it.id !== targetId); // 해당하는 아이디의 배열을 제외한 나머지를 가지고 배열 필터링
     console.log(newDiaryList);
 
@@ -57,11 +57,19 @@ function App() {
     console.log(`${targetId}가 삭제되었습니다`);
   };
 
+  const onEdit = (targetId, newContent) => {
+    setData(
+      data.map((it) =>
+        it.id === targetId ? { ...it, content: newContent } : it
+      )
+    );
+  };
+
   return (
     <div className="App">
       <DiaryEditor onCreate={onCreate} />
       {/* <DiaryList diaryList={dummyList} /> */}
-      <DiaryList diaryList={data} onDelete={onDelete} />
+      <DiaryList diaryList={data} onRemove={onRemove} onEdit={onEdit} />
     </div>
   );
 }
