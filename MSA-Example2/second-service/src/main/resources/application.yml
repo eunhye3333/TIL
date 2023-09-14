@@ -1,0 +1,8 @@
+server:
+  port: 0 # 따로 포트를 설정하지 않고 올라갈 때마다 랜덤으로 부여
+
+spring:
+  application:
+    name: second-service
+  cloud:
+    config: optional:configserver:http://localhost:8888

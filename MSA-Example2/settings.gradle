@@ -1,0 +1,8 @@
+rootProject.name = 'msa'
+include 'discovery-service' // 포함하고 있는 서비스
+include 'config-service'
+include 'first-service'
+include 'apigateway'
+include 'user-service'
+include 'second-service'
+
